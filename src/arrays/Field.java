@@ -1,9 +1,14 @@
 package arrays;
 
 public class Field {
-    private final int FIELD_SIZE = 3;
+    private final int FIELD_SIZE;
     private final char DEFAULT_VALUE = ' ';
-    private char[][] field = new char[FIELD_SIZE][FIELD_SIZE];
+    private char[][] field;
+
+    public Field(int size) {
+        FIELD_SIZE = size;
+        field = new char[FIELD_SIZE][FIELD_SIZE];
+    }
 
     private void eraseLine(int lineNumber) {
         for (int i = 0; i < FIELD_SIZE; i++) {
@@ -28,5 +33,6 @@ public class Field {
             showLine(i);
             System.out.println();
         }
+        System.out.println();
     }
 }
